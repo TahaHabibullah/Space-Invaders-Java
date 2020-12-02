@@ -1,5 +1,6 @@
 import javax.swing.ImageIcon;
 import java.awt.Image;
+import java.awt.Rectangle;
 
 public class Missile {
 	
@@ -29,6 +30,10 @@ public class Missile {
 	
 	public Image getImage() {
 		return image;
+	}
+	
+	public Rectangle getHitbox() {
+		return new Rectangle(x, y, width, height);
 	}
 
 	public int getX() {

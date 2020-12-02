@@ -17,7 +17,7 @@ public class Invasion {
 	public void initiateInvasion() {
 		invasion = new ArrayList<Enemy>();
 		for(int i = 0; i < 11; i++) {
-			Enemy enemy = new Enemy(80 + 80*(i), 100, 0);
+			Enemy enemy = new Enemy(85 + 80*(i), 100, 0);
 			invasion.add(enemy);
 		}
 		for(int i = 0; i < 11; i++) {

@@ -1,4 +1,5 @@
 import java.awt.Image;
+import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
@@ -30,8 +31,11 @@ public class UFO {
 	}
 	
 	public void move() {
-		
 		x+=2;
+	}
+	
+	public Rectangle getHitbox() {
+		return new Rectangle(x, 70, width, height);
 	}
 
 	public int getX() {
