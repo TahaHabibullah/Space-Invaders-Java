@@ -1,5 +1,4 @@
 import java.awt.Image;
-import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
@@ -35,11 +34,7 @@ public class Barrier {
 		width = image.getWidth(null);
 		height = image.getHeight(null);
 	}
-	
-	public Rectangle getHitbox() {
-		return new Rectangle(x, y, width, height);
-	}
-	
+
 	public int getX() {
 		return x;
 	}
@@ -79,8 +74,6 @@ public class Barrier {
 	public void setPhase(int p) {
 		this.p = p;
 	}
-	
-	
 
 	public Image getImage() {
 		return image;

@@ -1,5 +1,4 @@
 import java.awt.Image;
-import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
@@ -83,10 +82,6 @@ public class Enemy {
 			x-=10;
 		if(!left && !down)
 			x+=10;
-	}
-	
-	public Rectangle getHitbox() {
-		return new Rectangle(x, y, width, height);
 	}
 
 	public int getX() {

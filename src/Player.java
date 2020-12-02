@@ -1,6 +1,4 @@
 import java.awt.Image;
-import java.awt.Rectangle;
-
 import javax.swing.ImageIcon;
 public class Player {
 	
@@ -41,10 +39,6 @@ public class Player {
 		x+=dx;
 	}
 
-	public Rectangle getHitbox() {
-		return new Rectangle(x, 705, width, height);
-	}
-	
 	public int getX() {
 		return x;
 	}
