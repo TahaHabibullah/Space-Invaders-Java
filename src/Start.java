@@ -36,6 +36,4 @@ public class Start extends JPanel{
 		g.drawString("START GAME", 430, 550);
 		
 	}
-
- 
 }

@@ -17,19 +17,22 @@ public class Barrier {
 	
 	public void loadImage(int phase) {
 		ImageIcon barrier = null;
-		if(phase == 3) {
-			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier3.png"));
-		}
-		if(phase == 2) {
-			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier2.png"));
-		}
-		if(phase == 1) {
-			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier1.png"));
-		}
-		if(phase == 0) {
-			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier0.png"));
 
+		switch (phase) {
+		case 0:
+			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier0.png"));
+			break;
+		case 1:
+			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier1.png"));
+			break;
+		case 2:
+			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier2.png"));
+			break;
+		case 3:
+			barrier = new ImageIcon(getClass().getClassLoader().getResource("barrier3.png"));
+			break;
 		}
+		
 		image = barrier.getImage();
 		
 		width = image.getWidth(null);

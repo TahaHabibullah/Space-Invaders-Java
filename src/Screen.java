@@ -59,7 +59,6 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 			pMissiles.removeAll(pMissiles);
 			eMissiles.removeAll(eMissiles);
 		}
-		
 		// Allows the death animation to show with the right pacing
 		if(deathTick > 10) {
 			if(deathAnimation)
@@ -68,6 +67,11 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 		}
 	
 		if(!deathAnimation && !newWave) {
+			moveMissiles();
+			ufo();
+			detectCollisions();
+			movePlayer();
+			
 			// Depending on the amount of kills the player has accumulated
 			// these will occur faster and faster
 			if(moveTick > (60 / Math.pow(1.0274, kills) - (kills/4))) {
@@ -76,12 +80,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 			if(shootTick > 100 / Math.pow(1.04, kills)) {
 				enemyShoot();
 			}
-			
-			moveMissiles();
-			ufo();
-			detectCollisions();
-			movePlayer();
-			}
+		}
 	}
 	
 	
@@ -229,7 +228,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 		
 		// Detects when the right most invader is at the right end of the screen
 		// Causes the invasion to go down
-		if(invasion.getEnemy(rightMost).getX() > 960) {
+		if(invasion.getEnemy(rightMost).getX() > 950) {
 			d = true;
 			l = false;
 		}
@@ -248,7 +247,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 			lastY = invasion.getEnemy(0).getY();
 			if(invasion.getEnemy(leftMost).getX() < 10)
 				l = false;
-			else 
+			if(invasion.getEnemy(rightMost).getX() > 950) 
 				l = true;
 		}
 		
@@ -339,7 +338,6 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 	
 	// Moves player and enemy missiles and removes them if they go off the screen
 	public void moveMissiles() {
-		//if(pMissiles.size() > 0) {
 		for(int i = 0; i < pMissiles.size(); i++) {
 			pMissiles.get(i).move(true); 
 			if(pMissiles.get(i).getY() < i) {

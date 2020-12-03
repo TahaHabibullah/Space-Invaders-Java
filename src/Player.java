@@ -14,23 +14,25 @@ public class Player {
 
 	void loadImage(int sprite) {
 		ImageIcon player = null;
-		if(sprite == 0) {
+		
+		switch (sprite) {
+		case 0:
 			player = new ImageIcon(getClass().getClassLoader().getResource("player.png"));
 			s = 0;
-		}
-		if(sprite == 1)	{
+			break;
+		case 1:
 			player = new ImageIcon(getClass().getClassLoader().getResource("death0.png"));
 			s = 1;
-		}
-		if(sprite == 2)	{
+			break;
+		case 2:
 			player = new ImageIcon(getClass().getClassLoader().getResource("death1.png"));
 			s = 2;
-		}
-		if(sprite == 3)	{
+			break;
+		case 3:
 			player = new ImageIcon(getClass().getClassLoader().getResource("death2.png"));
 			s = 3;
+			break;
 		}
-		
 		
 		image = player.getImage();
 		width = image.getWidth(null);

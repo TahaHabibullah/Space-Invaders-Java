@@ -16,48 +16,58 @@ public class Enemy {
 
 	public void loadImage(int phase) {
 		ImageIcon enemy = null;
-		if(species == 0) {
-			if(phase == 0) {
+
+		switch (species) {
+		case 0:
+			switch (phase) {
+			case 0:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("enemy0.png"));
 				p = phase;
-			}
-			if(phase == 1) {
+				break;
+			case 1:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("enemy0-1.png"));
 				p = phase;
-			}
-			if(phase == 2) {
+				break;
+			case 2:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("kill.png"));
 				p = phase;
+				break;
 			}
-		}
-		if(species == 1) {
-			if(phase == 0) {
+			break;
+		case 1:
+			switch (phase) {
+			case 0:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("enemy1.png"));
 				p = phase;
-			}
-			if(phase == 1) {
+				break;
+			case 1:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("enemy1-1.png"));
 				p = phase;
-			}
-			if(phase == 2) {
+				break;
+			case 2:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("kill.png"));
 				p = phase;
+				break;
 			}
-		}
-		if(species == 2) {
-			if(phase == 0) {
+			break;
+		case 2:
+			switch (phase) {
+			case 0:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("enemy2.png"));
 				p = phase;
-			}
-			if(phase == 1) {
+				break;
+			case 1:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("enemy2-1.png"));
 				p = phase;
-			}
-			if(phase == 2) {
+				break;
+			case 2:
 				enemy = new ImageIcon(getClass().getClassLoader().getResource("kill.png"));
 				p = phase;
+				break;
 			}
+			break;
 		}
+		
 		image = enemy.getImage();
 		
 		width = image.getWidth(null);
@@ -86,7 +96,10 @@ public class Enemy {
 	}
 	
 	public Rectangle getHitbox() {
-		return new Rectangle(x, y, width, height);
+		if(species == 0)
+			return new Rectangle(x+3, y, width-3, height);
+		else
+			return new Rectangle(x, y, width, height);
 	}
 
 	public int getX() {
