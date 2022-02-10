@@ -1,5 +1,5 @@
 # Space-Invaders-Java
-Something I decided to do during quarantine. Only sprites that I've created are included, since I used sprites from the original game.
+Only sprites that I've created are included, since I used sprites from the original game.
 
 [Game Repo](https://github.com/TahaHabibullah/Space-Invaders-Java)
 
